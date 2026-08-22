@@ -1,0 +1,215 @@
+/* =========================================================
+   CONTACT US PAGE - ULTRA PREMIUM B2B STYLING
+   ========================================================= */
+
+/* Contact Info Top Cards */
+.contact-info-card {
+    background: #ffffff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    padding: 35px 20px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.contact-info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(44, 95, 45, 0.1);
+    border-color: var(--primary-green);
+}
+
+.contact-icon {
+    width: 65px;
+    height: 65px;
+    background: #f0f7f0;
+    color: var(--primary-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 20px auto;
+    transition: all 0.3s ease;
+}
+
+.contact-info-card:hover .contact-icon {
+    background: var(--primary-green);
+    color: #ffffff;
+}
+
+.contact-info-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 12px;
+}
+
+.contact-info-card p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.contact-info-card p a {
+    color: #666666;
+    transition: color 0.3s ease;
+}
+
+.contact-info-card:hover p a,
+.contact-info-card p a:hover {
+    color: var(--primary-green);
+}
+
+/* =========================================================
+   B2B BULK INQUIRY FORM STYLING
+   ========================================================= */
+.premium-contact-form-wrap {
+    background: #ffffff;
+    border: 1px solid #eaecea;
+    border-radius: 14px;
+    padding: 45px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.form-main-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #222222;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+/* Modern Input & Select Design */
+.custom-input,
+.custom-select {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #333333;
+    background-color: #fcfdfc;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+    height: auto;
+}
+
+.custom-input:focus,
+.custom-select:focus {
+    background-color: #ffffff;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 4px rgba(44, 95, 45, 0.12);
+}
+
+.custom-input::placeholder {
+    color: #aaaaaa;
+    font-size: 13px;
+}
+
+/* =========================================================
+   RIGHT SIDEBAR SUPPORT & WHATSAPP CARDS
+   ========================================================= */
+.support-card {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* WhatsApp Card */
+.whatsapp-card {
+    background: linear-gradient(135deg, #1b3d20 0%, #0c2010 100%);
+    box-shadow: 0 10px 25px rgba(27, 61, 32, 0.3);
+    border: 1px solid rgba(151, 188, 98, 0.3);
+}
+
+.wa-icon i {
+    font-size: 46px;
+    color: #25D366;
+}
+
+.wa-btn {
+    background-color: #25D366;
+    color: #ffffff !important;
+    font-weight: 700;
+    padding: 14px 25px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.wa-btn:hover {
+    background-color: #1ebc59;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Why Trade With Us Card */
+.trust-card {
+    background: #ffffff;
+    border: 1px solid #eaecea;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+}
+
+.trust-card h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    border-bottom: 2px solid #f0f2f0;
+    padding-bottom: 12px;
+}
+
+.trust-list {
+    list-style: none;
+    padding: 0;
+}
+
+.trust-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.trust-list li i {
+    color: var(--primary-green);
+    font-size: 18px;
+    margin-right: 12px;
+    margin-top: 2px;
+}
+
+/* =========================================================
+   EMBEDDED MAP CONTAINER
+   ========================================================= */
+.map-container {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    border-top: 2px solid #eaecea;
+}
+
+/* Responsive Fixes */
+@media (max-width: 991px) {
+    .premium-contact-form-wrap {
+        padding: 35px 25px;
+    }
+}
+
+@media (max-width: 575px) {
+    .premium-contact-form-wrap {
+        padding: 30px 20px;
+    }
+    .form-main-title {
+        font-size: 24px;
+    }
+}

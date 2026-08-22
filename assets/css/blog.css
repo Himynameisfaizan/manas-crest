@@ -1,0 +1,570 @@
+.blog-listing-area {
+    background-color: #fcfdfc;
+    padding: 50px 0;
+}
+
+.blog-category-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.pill-btn {
+    padding: 8px 22px;
+    background-color: #ffffff;
+    color: #555555;
+    border: 1px solid #e2e8e2;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.pill-btn:hover,
+.pill-btn.active {
+    background-color: var(--primary-green);
+    color: #ffffff !important;
+    border-color: var(--primary-green);
+    box-shadow: 0 5px 15px rgba(44, 95, 45, 0.2);
+}
+
+.single-blog-card {
+    background: #ffffff;
+    border: 1px solid #eaecea;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.single-blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(44, 95, 45, 0.1);
+    border-color: #d8e6d8;
+}
+
+.blog-image {
+    position: relative;
+    overflow: hidden;
+    background: #f8f9fa;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.blog-image img {
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: block;
+}
+
+.single-blog-card:hover .blog-image img {
+    transform: scale(1.07);
+}
+
+.blog-content {
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-meta {
+    font-size: 13px;
+    color: #666666;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.blog-meta span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.blog-meta i {
+    color: var(--primary-green);
+    margin-right: 6px;
+    font-size: 14px;
+}
+
+.blog-title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 14px;
+}
+
+.blog-title a {
+    color: #222222;
+    transition: color 0.3s ease;
+}
+
+.single-blog-card:hover .blog-title a,
+.blog-title a:hover {
+    color: var(--primary-green);
+}
+
+.blog-excerpt {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    flex-grow: 1; 
+    }
+
+.read-more-btn {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.read-more-btn i {
+    transition: transform 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: var(--accent-gold);
+}
+
+.read-more-btn:hover i {
+    transform: translateX(5px); 
+    }
+
+.premium-pagination ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+}
+
+.premium-pagination .page-link {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #e2e8e2;
+    border-radius: 8px;
+    color: #333333;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.premium-pagination .page-link.next-btn {
+    width: auto;
+    padding: 0 18px;
+    gap: 6px;
+}
+
+.premium-pagination .page-link:hover,
+.premium-pagination .page-link.active {
+    background: var(--primary-green);
+    color: #ffffff !important;
+    border-color: var(--primary-green);
+    box-shadow: 0 4px 10px rgba(44, 95, 45, 0.2);
+}
+
+@media (max-width: 991px) {
+    .blog-image img { height: 210px; }
+    .blog-title { font-size: 18px; }
+}
+
+@media (max-width: 575px) {
+    .blog-meta { gap: 10px; font-size: 12px; }
+    .blog-content { padding: 20px 18px; }
+    .blog-category-pills { gap: 6px; }
+    .pill-btn { padding: 6px 16px; font-size: 13px; }
+}
+
+
+/* =========================================================
+   BLOG DETAILS PAGE - ULTRA PREMIUM STYLING
+   ========================================================= */
+
+/* Main Article Typography & Layout */
+.article-meta-bar {
+    padding: 12px 18px;
+    background-color: #f4f8f4;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-green);
+    font-size: 13px;
+    color: #555555;
+}
+
+.article-meta-bar i {
+    color: var(--primary-green);
+    margin-right: 5px;
+}
+
+.verified-badge {
+    background: #e2f0e2;
+    color: var(--primary-green);
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.article-main-title {
+    font-size: 34px;
+    font-weight: 800;
+    color: #222222;
+    line-height: 1.35;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================================
+   BLOG DETAILS - HERO IMAGE HEIGHT & ASPECT RATIO FIX
+   ========================================================= */
+.article-hero-image {
+    width: 100%;
+    max-height: 440px; /* Desktop par maximum height limit fix kar di */
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #f4f8f4;
+    position: relative;
+    border: 1px solid #e8ede8;
+}
+
+.article-hero-image img {
+    width: 100%;
+    height: 440px; /* Fixed height container ke sath */
+    object-fit: cover; /* Magic property: Image bina stretch/pichke automatically center-crop ho jayegi */
+    object-position: center; /* Important part center me focus rahega */
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Subtle zoom on hover for premium feel */
+.article-hero-image:hover img {
+    transform: scale(1.04);
+}
+
+/* =========================================================
+   RESPONSIVE HEIGHT FIX (Tablet & Mobile)
+   ========================================================= */
+@media (max-width: 991px) {
+    .article-hero-image,
+    .article-hero-image img {
+        max-height: 350px;
+        height: 350px;
+    }
+}
+
+@media (max-width: 575px) {
+    .article-hero-image,
+    .article-hero-image img {
+        max-height: 240px;
+        height: 240px;
+    }
+}
+
+.article-body-content {
+    font-size: 16px;
+    color: #444444;
+    line-height: 1.85;
+}
+
+.article-body-content .lead-text {
+    font-size: 19px;
+    font-weight: 500;
+    color: #222222;
+    line-height: 1.75;
+}
+
+.article-sub-heading {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222222;
+    border-bottom: 2px solid #eef0ee;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+/* Featured Blockquote */
+.premium-blockquote {
+    background: #fdfdf9;
+    border: 1px solid #e5ede5;
+    border-left: 5px solid var(--accent-gold);
+    padding: 30px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+.premium-blockquote .quote-icon i {
+    font-size: 28px;
+    color: rgba(151, 188, 98, 0.4);
+    margin-bottom: 10px;
+}
+
+.premium-blockquote .quote-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222222;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.premium-blockquote cite {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-green);
+    margin-top: 15px;
+    font-style: normal;
+}
+
+/* Checklist Bullet points */
+.article-check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.article-check-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #efefef;
+    font-size: 16px;
+    color: #333333;
+}
+
+.article-check-list li i {
+    color: var(--primary-green);
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* Informative Article Table */
+.article-table thead {
+    background-color: var(--primary-green);
+    color: #ffffff;
+}
+
+.article-table thead th {
+    font-weight: 600;
+    border: none;
+    padding: 14px 18px;
+}
+
+.article-table tbody td {
+    padding: 14px 18px;
+    vertical-align: middle;
+    border-top: 1px solid #eee;
+}
+
+/* Tag Pills in Footer */
+.tag-pill,
+.sidebar-tags a {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #f1f4f1;
+    color: #444444 !important;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.tag-pill:hover,
+.sidebar-tags a:hover {
+    background-color: var(--primary-green);
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+.share-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f1f4f1;
+    color: #444444;
+    border-radius: 50%;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.share-icons a:hover {
+    background-color: var(--primary-green);
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* Author Box */
+.article-author-box {
+    background-color: #fafbfa;
+    border: 1px solid #e8ede8;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   SIDEBAR & CONVERSION WIDGETS STYLING
+   ========================================================= */
+.sidebar-widget {
+    background: #ffffff;
+    border: 1px solid #eaecea;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.widget-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222222;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f2f0;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary-green);
+}
+
+/* Search Form */
+.sidebar-search-form {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.sidebar-search-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.sidebar-search-form button {
+    background: var(--primary-green);
+    color: #ffffff;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.sidebar-search-form button:hover {
+    background: var(--accent-gold);
+}
+
+/* Lead Conversion Trigger Widget */
+.quote-trigger-widget {
+    background: linear-gradient(135deg, #1a2a1d 0%, #2C5F2D 100%);
+    border: none;
+    box-shadow: 0 10px 25px rgba(44, 95, 45, 0.25);
+}
+
+/* Category List */
+.sidebar-category-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-category-list li {
+    border-bottom: 1px solid #f4f5f4;
+}
+
+.sidebar-category-list li:last-child {
+    border-bottom: none;
+}
+
+.sidebar-category-list li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    color: #555555;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-category-list li a:hover {
+    color: var(--primary-green);
+    padding-left: 6px;
+}
+
+.sidebar-category-list .count {
+    background: #f0f4f0;
+    color: var(--primary-green);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Recent Posts Widget */
+.single-recent-post .post-thumb img {
+    width: 75px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.single-recent-post:hover .post-thumb img {
+    transform: scale(1.05);
+}
+
+.single-recent-post .post-info .date {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.single-recent-post .post-info .post-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.single-recent-post .post-info .post-title a {
+    color: #222222;
+    transition: 0.3s ease;
+}
+
+.single-recent-post:hover .post-info .post-title a {
+    color: var(--primary-green);
+}
+
+/* =========================================================
+   RESPONSIVE OVERRIDES
+   ========================================================= */
+@media (max-width: 991px) {
+    .article-main-title { font-size: 28px; }
+    .article-body-content { font-size: 15px; }
+    .premium-blockquote { padding: 20px; }
+}
+
+@media (max-width: 575px) {
+    .article-meta-bar { flex-direction: column; align-items: flex-start !important; gap: 8px; }
+    .article-main-title { font-size: 24px; }
+    .article-footer-tags { flex-direction: column; align-items: flex-start !important; gap: 15px; }
+    .article-author-box { flex-direction: column; text-align: center; }
+    .article-author-box .mr-4 { margin-right: 0 !important; margin-bottom: 15px; }
+}

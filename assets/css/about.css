@@ -1,0 +1,288 @@
+.bg-glow-circle {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(151, 188, 98, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.about-content-wrap .main-heading {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.about-content-wrap .highlight-green {
+    color: var(--primary-green);
+    position: relative;
+}
+
+.about-content-wrap .lead-text {
+    font-size: 18px;
+    color: #222222;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.about-content-wrap .body-text {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.8;
+}
+
+.about-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-feature-list li {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.about-feature-list li i {
+    color: var(--accent-gold);
+    font-size: 18px;
+    margin-right: 12px;
+}
+
+.signature-box {
+    background: #ffffff;
+    border: 1px solid #e2eee2;
+    border-left: 5px solid var(--primary-green);
+    padding: 18px 22px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+.icon-seal i {
+    font-size: 36px;
+    color: var(--primary-green);
+}
+
+.seal-text h5 {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.about-image-wrap {
+    position: relative;
+    padding-bottom: 30px;
+    padding-left: 20px;
+}
+
+.image-main {
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+}
+
+.image-main img {
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.about-image-wrap:hover .image-main img {
+    transform: scale(1.05);
+}
+
+.floating-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(11, 21, 13, 0.92);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(151, 188, 98, 0.4);
+    color: #ffffff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    gap: 18px;
+}
+
+.badge-icon i {
+    font-size: 32px;
+    color: var(--accent-gold);
+}
+
+.floating-badge .years {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin: 0;
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    padding-right: 15px;
+    line-height: 1;
+}
+
+.pillar-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #ebebeb;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    z-index: 1;
+}
+
+.card-bg-number {
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    z-index: -1;
+    transition: all 0.4s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(44, 95, 45, 0.12);
+    border-color: var(--accent-gold);
+}
+
+.pillar-card:hover .card-bg-number {
+    color: rgba(151, 188, 98, 0.15);
+    transform: scale(1.1);
+}
+
+.pillar-icon {
+    width: 65px;
+    height: 65px;
+    background: #f0f7f0;
+    color: var(--primary-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 22px;
+    transition: all 0.3s ease;
+}
+
+.pillar-card:hover .pillar-icon,
+.active-pillar .pillar-icon {
+    background: var(--primary-green);
+    color: #ffffff;
+}
+
+.active-pillar {
+    border-color: var(--primary-green);
+    box-shadow: 0 10px 30px rgba(44, 95, 45, 0.08);
+}
+
+.pillar-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.pillar-card p {
+    font-size: 15px;
+    color: #666666;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.premium-table-wrap {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    border: 1px solid #eef0ee;
+}
+
+.premium-comparison-table thead {
+    background: #1a2a1d;
+    color: #ffffff;
+}
+
+.premium-comparison-table thead th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.8px;
+    padding: 20px 25px;
+    border: none;
+}
+
+.premium-comparison-table th.highlight-col,
+.premium-comparison-table td.highlight-col {
+    background-color: #f4fbf4;
+    border-left: 2px solid #d2ecd2;
+    border-right: 2px solid #d2ecd2;
+}
+
+.premium-comparison-table tbody td {
+    padding: 18px 25px;
+    vertical-align: middle;
+    font-size: 15px;
+    border-top: 1px solid #f1f1f1;
+}
+
+.premium-comparison-table tbody tr:hover td {
+    background-color: #fafdfa;
+}
+
+.export-stats-area {
+    background-color: #0b150d;
+    padding: 70px 0;
+    color: #ffffff;
+    border-top: 3px solid var(--accent-gold);
+    border-bottom: 3px solid var(--primary-green);
+}
+
+.single-stat-box {
+    padding: 20px 15px;
+    transition: transform 0.3s ease;
+}
+
+.single-stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 46px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    text-shadow: 0 2px 10px rgba(151, 188, 98, 0.2);
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #d0d0d0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0;
+}
+
+@media (max-width: 991px) {
+    .about-content-wrap .main-heading { font-size: 30px; }
+    .floating-badge { left: 10px; bottom: -15px; padding: 15px 18px; }
+    .stat-number { font-size: 36px; }
+}
+
+@media (max-width: 575px) {
+    .about-content-wrap .main-heading { font-size: 26px; }
+    .pillar-card { padding: 30px 20px; }
+    .floating-badge { position: relative; bottom: 0; margin-top: 15px; width: 100%; }
+    .about-image-wrap { padding-left: 0; }
+    .signature-box { flex-direction: column; text-align: center; }
+    .signature-box .mr-3 { margin-right: 0 !important; margin-bottom: 10px; }
+}

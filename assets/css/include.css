@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none !important;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+:root {
+    --primary-green: #2C5F2D;
+    --accent-gold: #97BC62;
+    --light-bg: #F9F8F3;
+    --text-dark: #333333;
+}
+
+/* =========================================
+   LAYOUT GRID (Fixing broken Bootstrap Cols)
+   ========================================= */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+
+/* Force widths if Bootstrap CSS is failing locally */
+.col-lg-12 {
+    width: 100%;
+}
+
+.header-logo-wrapper {
+    width: 25%;
+}
+
+.nav-menu-wrapper {
+    width: 75%;
+}
+
+/* Fallback so missing logo image doesn't break the layout */
+.header-logo a {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* =========================================
+   TOP BAR STYLING
+   ========================================= */
+.header-top-area {
+    background-color: var(--primary-green);
+    color: white;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.short-desc {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.short-desc p {
+    margin: 0;
+}
+
+.short-desc a {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+.short-desc a:hover {
+    color: #ffffff;
+}
+
+/* =========================================
+   MAIN HEADER & NAVIGATION
+   ========================================= */
+.main-header {
+    padding: 15px 0;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 100;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.main-nav ul.nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin: 0;
+}
+
+.main-nav ul.nav>li {
+    position: relative;
+    padding: 10px 0;
+}
+
+.main-nav ul.nav>li>a {
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.main-nav ul.nav>li>a.active,
+.main-nav ul.nav>li>a:hover {
+    color: var(--primary-green);
+}
+
+.main-nav ul.nav>li>a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-green);
+    transition: 0.3s ease;
+}
+
+.main-nav ul.nav>li>a:hover::after,
+.main-nav ul.nav>li>a.active::after {
+    width: 100%;
+}
+
+/* =========================================
+   PRODUCTS DROPDOWN STYLING
+   ========================================= */
+.dropdown-sidemenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 3px solid var(--primary-green);
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.main-nav ul.nav>li:hover .dropdown-sidemenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-sidemenu li {
+    padding: 0;
+}
+
+.dropdown-sidemenu li a {
+    padding: 12px 20px;
+    display: block;
+    color: #444;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.dropdown-sidemenu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-sidemenu li a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-green);
+    padding-left: 28px;
+}
+
+.dropdown-sidemenu li a::after {
+    display: none;
+}
+
+/* HIDE UNNECESSARY MOBILE ELEMENTS BY DEFAULT */
+.off-canvas-wrapper,
+.header-sticky,
+.d-lg-none {
+    display: none;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE FIXES (The Lifesaver)
+   ========================================= */
+
+.header-sticky {
+    display: none;
+}
+
+.off-canvas-wrapper {
+    display: none;
+}
+
+
+@media (max-width: 991px) {
+    .d-none.d-lg-block {
+        display: none !important;
+    }
+
+    .d-lg-none {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .short-desc {
+        flex-direction: column;
+        gap: 5px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .main-header .row.align-items-center {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .header-logo img {
+        max-height: 45px !important;
+    }
+
+    .mobile-menu-btn {
+        list-style: none;
+    }
+
+    .mobile-menu-btn .off-canvas-btn {
+        font-size: 24px;
+        color: var(--primary-green);
+        background: transparent;
+        padding: 4px 10px;
+        border: 2px solid var(--primary-green);
+        border-radius: 4px;
+        display: inline-block;
+        transition: 0.3s;
+    }
+
+    .mobile-menu-btn .off-canvas-btn:hover {
+        background-color: var(--primary-green);
+        color: #ffffff;
+    }
+}
+
+@media (max-width: 575px) {
+    .header-top-area {
+        padding: 8px 0;
+    }
+
+    .header-logo img {
+        max-height: 38px !important;
+        /* Slightly smaller logo for very small screens */
+    }
+}
+
+
+/* =========================================
+   CUSTOM PREMIUM FOOTER (Reference Match)
+   ========================================= */
+.custom-premium-footer {
+    background-color: #0b150d;
+    /* Deep Dark Green/Charcoal matching your theme */
+    color: #e0e0e0;
+    padding-top: 70px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-main-content {
+    padding-bottom: 50px;
+}
+
+/* Brand Text Styling */
+.brand-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.brand-name span {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    gap: 12px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #1a2a1d;
+    /* Dark subtle circle */
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.social-icons a:hover {
+    background-color: var(--accent-gold);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+/* Footer Headings & Underline */
+.footer-heading {
+    color: var(--accent-gold);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* The short gold line under headings from your reference */
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 35px;
+    height: 2px;
+    background-color: var(--accent-gold);
+}
+
+/* 2-Column Link Layout */
+.footer-links-two-col {
+    display: flex;
+    gap: 40px;
+    /* Space between the two columns */
+}
+
+/* Footer Lists */
+.footer-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-list li {
+    margin-bottom: 12px;
+}
+
+.footer-list li a {
+    color: #b0b0b0;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.footer-list li a:hover {
+    color: var(--accent-gold);
+    padding-left: 4px;
+}
+
+/* Contact Info Section */
+.footer-contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact-info li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.footer-contact-info li i {
+    color: var(--accent-gold);
+    font-size: 16px;
+    margin-right: 15px;
+    margin-top: 3px;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Footer Copyright Bottom Area */
+.footer-bottom {
+    background-color: #070d08;
+    /* Slightly darker than footer bg */
+    padding: 22px 0;
+    border-top: 1px solid #152217;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    color: #888888;
+}
+
+.footer-bottom .highlight {
+    color: var(--accent-gold);
+    font-weight: 500;
+}
+
+/* Responsive Fixes */
+@media (max-width: 767px) {
+    .footer-links-two-col {
+        gap: 20px;
+    }
+}
+
+
+/* =========================================
+   PREMIUM BREADCRUMB STYLING & ANIMATIONS
+   ========================================= */
+
+/* Keyframe for Smooth Title/Link Entrance Animation */
+@keyframes fadeInUpBreadcrumb {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.premium-breadcrumb-area {
+    position: relative;
+    padding: 90px 0;
+    background-color: #0b150d; /* Deep Forest Dark fallback */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    overflow: hidden;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+/* Dark Rich Overlay with Subtle Gradient */
+.breadcrumb-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg, 
+        rgba(11, 21, 13, 0.90) 0%, 
+        rgba(44, 95, 45, 0.75) 100%
+    );
+    z-index: -1;
+}
+
+/* Main Title Styling with Smooth Animation */
+.breadcrumb-title {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInUpBreadcrumb 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Breadcrumb Navigation List */
+.breadcrumb-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Long links wrap smoothly on mobile */
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    animation: fadeInUpBreadcrumb 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.breadcrumb-list li {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+}
+
+/* Clickable Parent Links */
+.breadcrumb-list li a {
+    color: var(--accent-gold);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.breadcrumb-list li a:hover {
+    color: #ffffff;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Subtle underline on hover */
+.breadcrumb-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.breadcrumb-list li a:hover::after {
+    width: 100%;
+}
+
+/* Divider Icon (Angle Right) */
+.breadcrumb-list .divider i {
+    color: #888888;
+    font-size: 13px;
+    margin: 0 4px;
+}
+
+/* Current Active Page Name */
+.breadcrumb-list li.active {
+    color: #e0e0e0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   RESPONSIVE BREADCRUMB OVERRIDES
+   ========================================= */
+
+/* Tablets & Small Laptops */
+@media (max-width: 991px) {
+    .premium-breadcrumb-area {
+        padding: 70px 0;
+    }
+    .breadcrumb-title {
+        font-size: 34px;
+        letter-spacing: 1.5px;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 575px) {
+    .premium-breadcrumb-area {
+        padding: 50px 0;
+    }
+    .breadcrumb-title {
+        font-size: 26px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    .breadcrumb-list {
+        gap: 8px;
+    }
+    .breadcrumb-list li {
+        font-size: 13px;
+    }
+}
