@@ -29,7 +29,11 @@ if ($nav_cat_res && mysqli_num_rows($nav_cat_res) > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -52,63 +56,62 @@ if ($nav_cat_res && mysqli_num_rows($nav_cat_res) > 0) {
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/product.css">
 
-    <!-- Google Fonts for Premium Look -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
     <style>
-        /* Active Menu Highlighting */
-        .main-nav ul.nav>li>a.active {
-            color: var(--primary-green) !important;
-        }
+    /* Active Menu Highlighting */
+    .main-nav ul.nav>li>a.active {
+        color: var(--primary-green) !important;
+    }
 
-        .main-nav ul.nav>li>a.active::after {
-            width: 100% !important;
-        }
+    .main-nav ul.nav>li>a.active::after {
+        width: 100% !important;
+    }
 
-        /* Bootstrap Offcanvas Mobile Menu Styling */
-        .mobile-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    /* Bootstrap Offcanvas Mobile Menu Styling */
+    .mobile-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
 
-        .mobile-menu li {
-            border-bottom: 1px solid #f1f1f1;
-        }
+    .mobile-menu li {
+        border-bottom: 1px solid #f1f1f1;
+    }
 
-        .mobile-menu li a {
-            display: block;
-            padding: 12px 0;
-            font-size: 16px;
-            font-weight: 600;
-            color: #333;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+    .mobile-menu li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        transition: 0.3s;
+    }
 
-        .mobile-menu li a.active {
-            color: var(--primary-green);
-        }
+    .mobile-menu li a.active {
+        color: var(--primary-green);
+    }
 
-        .dropdown-mobile {
-            padding-left: 15px;
-            border-left: 2px solid #eee;
-            margin-bottom: 10px;
-        }
+    .dropdown-mobile {
+        padding-left: 15px;
+        border-left: 2px solid #eee;
+        margin-bottom: 10px;
+    }
 
-        .dropdown-mobile li {
-            border-bottom: none;
-        }
+    .dropdown-mobile li {
+        border-bottom: none;
+    }
 
-        .dropdown-mobile li a {
-            padding: 8px 0;
-            font-size: 14px;
-            color: #666;
-            font-weight: 500;
-        }
+    .dropdown-mobile li a {
+        padding: 8px 0;
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+    }
     </style>
 
     <header class="main-header-area">
@@ -167,9 +170,9 @@ if ($nav_cat_res && mysqli_num_rows($nav_cat_res) > 0) {
                                             <ul class="dropdown-sidemenu dropdown-hover-2">
                                                 <li><a href="products.php">All Commodities</a></li>
                                                 <?php foreach ($categories_list as $cat): ?>
-                                                    <li><a
-                                                            href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
-                                                    </li>
+                                                <li><a
+                                                        href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
+                                                </li>
                                                 <?php endforeach; ?>
                                             </ul>
                                         </li>
@@ -229,9 +232,9 @@ if ($nav_cat_res && mysqli_num_rows($nav_cat_res) > 0) {
                                     <ul class="dropdown-sidemenu dropdown-hover-2">
                                         <li><a href="products.php">All Commodities</a></li>
                                         <?php foreach ($categories_list as $cat): ?>
-                                            <li><a
-                                                    href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
-                                            </li>
+                                        <li><a
+                                                href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
+                                        </li>
                                         <?php endforeach; ?>
                                     </ul>
                                 </li>
@@ -293,9 +296,9 @@ if ($nav_cat_res && mysqli_num_rows($nav_cat_res) > 0) {
                             <ul class="collapse dropdown-mobile list-unstyled" id="mobileProductDropdown">
                                 <li><a href="products.php">All Commodities</a></li>
                                 <?php foreach ($categories_list as $cat): ?>
-                                    <li><a
-                                            href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
-                                    </li>
+                                <li><a
+                                        href="category-products.php?id=<?php echo $cat['id']; ?>"><?php echo htmlspecialchars($cat['categories']); ?></a>
+                                </li>
                                 <?php endforeach; ?>
                             </ul>
                         </li>
